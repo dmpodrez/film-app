@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { films } from './data/films';
+import { Header } from './components/header/header';
+import { Footer } from './components/footer/footer';
+import { FilmList } from './components/film-list/film-list';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, FormsModule],
-  templateUrl: './app.html',
+  imports: [FormsModule, Header, Footer, FilmList],
+  templateUrl: './app.html'
 })
 export class App {
   films = films;

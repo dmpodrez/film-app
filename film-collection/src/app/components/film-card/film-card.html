@@ -1,0 +1,18 @@
+<div style="border:1px solid #ccc; margin:10px; padding:10px">
+  <img [src]="film.image" [alt]="film.title" width="150">
+
+  <h3>{{ film.title }}</h3>
+
+  <p>Year: {{ film.year }}</p>
+  <p>Rating: ⭐ {{ film.rating }}</p>
+  <p>Duration: {{ film.duration }} min</p>
+  <p>{{ film.description }}</p>
+
+  <button (click)="toggleFavorite()">
+    @if (film.favorite) {
+      Remove from favorites
+    } @else {
+      Add to favorites
+    }
+  </button>
+</div>

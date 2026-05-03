@@ -4,38 +4,22 @@
 </style>
 
 <main class="main">
- <h1>Films</h1>
+ <app-header></app-header>
 
-<input
-  type="text"
-  placeholder="Search film..."
-  [(ngModel)]="search"
-/>
+<main>
+  <input
+    type="text"
+    placeholder="Search film..."
+    [(ngModel)]="search"
+  />
 
-@if (filteredFilms.length === 0) {
-  <p>Nothing found</p>
-}
+  <app-film-list
+    [films]="filteredFilms"
+    (favoriteToggled)="toggleFavorite($event)">
+  </app-film-list>
+</main>
 
-@for (film of filteredFilms; track film.id) {
-  <div style="border:1px solid #ccc; margin:10px; padding:10px">
-    <img [src]="film.image" [alt]="film.title" width="150">
-
-    <h3>{{ film.title }}</h3>
-
-    <p>Year: {{ film.year }}</p>
-    <p>Rating: ⭐ {{ film.rating }}</p>
-    <p>Duration: {{ film.duration }} min</p>
-    <p>{{ film.description }}</p>
-
-    <button (click)="toggleFavorite(film.id)">
-      @if (film.favorite) {
-        Remove from favorites
-      } @else {
-        Add to favorites
-      }
-    </button>
-  </div>
-}
+<app-footer></app-footer>
 </main>
 
 

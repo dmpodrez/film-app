@@ -1,0 +1,10 @@
+@if (films.length === 0) {
+  <p>Nothing found</p>
+}
+
+@for (film of films; track film.id) {
+  <app-film-card
+    [film]="film"
+    (favoriteToggled)="onFavoriteToggled($event)">
+  </app-film-card>
+}
