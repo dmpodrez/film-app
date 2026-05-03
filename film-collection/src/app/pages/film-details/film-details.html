@@ -1,0 +1,15 @@
+@if (film) {
+  <h2>{{ film.title }}</h2>
+
+  <img [src]="film.image" [alt]="film.title" width="200">
+
+  <p>Year: {{ film.year }}</p>
+  <p>Rating: {{ film.rating }}</p>
+  <p>Duration: {{ film.duration }} min</p>
+  <p>{{ film.description }}</p>
+
+  <a routerLink="/">Back to list</a>
+} @else {
+  <p>Film not found</p>
+  <a routerLink="/">Back to list</a>
+}

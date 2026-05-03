@@ -1,25 +1,8 @@
-
-<style>
-
-</style>
-
-<main class="main">
- <app-header></app-header>
+<app-header></app-header>
 
 <main>
-  <input
-    type="text"
-    placeholder="Search film..."
-    [(ngModel)]="search"
-  />
-
-  <app-film-list
-    [films]="filteredFilms"
-    (favoriteToggled)="toggleFavorite($event)">
-  </app-film-list>
+  <router-outlet></router-outlet>
 </main>
 
 <app-footer></app-footer>
-</main>
-
 

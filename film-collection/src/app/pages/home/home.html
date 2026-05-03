@@ -1,0 +1,12 @@
+<h2>Films</h2>
+
+<input
+  type="text"
+  placeholder="Search film..."
+  [(ngModel)]="search"
+/>
+
+<app-film-list
+  [films]="filteredFilms"
+  (favoriteToggled)="toggleFavorite($event)">
+</app-film-list>
