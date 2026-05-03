@@ -5,7 +5,7 @@
 
   <p>Year: {{ film.year }}</p>
   <p>Rating: {{ film.rating }}</p>
-  <p>Duration: {{ film.duration }} min</p>
+  <p>Duration: {{ film.duration | duration }}</p>
   <p>{{ film.description }}</p>
 
   <a routerLink="/">Back to list</a>

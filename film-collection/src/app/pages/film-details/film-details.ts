@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Film } from '../../data/films';
 import { FilmService } from '../../services/film';
-
+import { DurationPipe } from '../../pipes/duration-pipe';
 @Component({
   selector: 'app-film-details',
-  imports: [RouterLink],
+  imports: [RouterLink, DurationPipe],
   templateUrl: './film-details.html'
 })
 export class FilmDetails {
