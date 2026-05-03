@@ -1,30 +1,23 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { films } from '../../data/films';
 import { FilmList } from '../../components/film-list/film-list';
+import { FilmService } from '../../services/film';
 
 @Component({
   selector: 'app-home',
   imports: [FormsModule, FilmList],
-  templateUrl: './home.html',
-  styleUrl: './home.scss'
+  templateUrl: './home.html'
 })
 export class Home {
-  films = films;
-
   search = '';
 
+  constructor(private filmService: FilmService) {}
+
   get filteredFilms() {
-    return this.films.filter(film =>
-      film.title.toLowerCase().includes(this.search.toLowerCase())
-    );
+    return this.filmService.searchFilms(this.search);
   }
 
   toggleFavorite(id: number) {
-    const film = this.films.find(film => film.id === id);
-
-    if (film) {
-      film.favorite = !film.favorite;
-    }
+    this.filmService.toggleFavorite(id);
   }
 }
