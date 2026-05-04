@@ -1,0 +1,12 @@
+.film-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.empty {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  color: #64748b;
+}
